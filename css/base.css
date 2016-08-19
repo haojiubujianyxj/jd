@@ -1,0 +1,636 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.w {  /*版心 提取 */
+    width: 1210px;margin:0 auto;
+}
+
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+/*登录框*/
+#all {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0,.3);
+    z-index: 999;
+    display: none;
+}
+#login {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    margin-left: -150px;
+    margin-top: -100px;
+    display: none;
+}
+#closeAll {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+/*导航条开始*/
+.shortcut {
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    background-color: #F1F1F1;
+}
+.fl .dt {
+    position: relative;
+    padding: 0 20px 0 10px;
+}
+.myjd i,
+.fl i {
+    font: 400 15px/15px "宋体";
+    position: absolute;
+    top: 14px;
+    right: 3px;
+    width: 15px;
+    height: 7px;
+    /*background-color: red;*/
+    overflow: hidden;
+}
+.myjd s,
+.fl s {
+    position: absolute;
+    top: -8px;
+    left: 0;
+}
+.register li {
+float: left;
+padding: 0 10px;
+}
+.register .myjd {
+    padding: 0 20px 0 10px;
+}
+.register li {
+    position: relative;
+}
+.register li.line {
+    width: 1px;
+    height: 12px;
+    background-color: #ddd;
+    margin-top: 9px;
+    padding: 0;
+}
+.register li span {
+    color: #C81623;
+    padding-left: 10px;
+}
+.register li.tel {
+    padding: 0 20px 0 25px;
+}
+.register li.myjd .phone {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    padding: 0;
+    width: 11px;
+    height: 16px;
+    background: url("images/sprite.png") no-repeat -2px -2px;
+}
+/*banner*/
+#topBanner {
+    background-color: #8A25C6;
+}
+#topBanner .ban {
+    position: relative;
+}
+#closeBanner {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 19px;
+    height: 19px;
+    background: url("images/close.png") no-repeat;
+}
+#closeBanner:hover {
+    background: url("images/close.png") no-repeat 0 -19px;
+}
+/*logo部分*/
+.logo {
+    width: 362px;
+    height: 70px;
+    float: left;
+    padding-top: 30px;
+    /*background-color: red;*/
+}
+.logo a{
+    display: block;
+    width: 362px;
+    height: 70px;
+    /*background-color: red;*/
+    background: url("images/logo.png") no-repeat;
+    text-indent: -999em;
+}
+.search {
+    float: left;
+    width: 538px;
+    height: 32px;
+    background-color: #B61D1D;
+    margin-top: 25px;
+    padding: 2px 0 2px 2px;
+}
+.car {
+    float: right;
+    width: 77px;
+    height: 34px;
+    background-color: #F9F9F9;
+    margin: 25px 65px 0 0;
+    border: 1px solid #DFDFDF;
+    position: relative;
+    padding: 0 28px 0 36px;
+    text-align: center;
+}
+.search .search1 {
+    float: left;
+    width: 450px;
+    height: 32px;
+    background-color: white;
+    padding-left: 4px;
+}
+.search input {
+    font-size: 16px;
+    width: 454px;
+    height: 32px;
+    font-size: 14px;
+    color: darkgray;
+}
+.search .search2 a{
+    float: right;
+    width: 82px;
+    height: 32px;
+    line-height: 36px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+.car .icar{
+    display: block;
+    position: absolute;
+    width: 17px;
+    height: 13px;
+    top: 10px;
+    left: 19px;
+    background: url("../images/sprite.png") no-repeat 0 -92px;
+}
+.car a{
+    line-height: 34px;
+    font-size: 12px;
+    color: #666666;
+    position: relative;
+}
+.car a:hover {
+    color: #B61D1D;
+}
+.car .iabc{
+    position: absolute;
+    display: block;
+    width: 7px;
+    height: 13px;
+    top: 8px;
+    right: 20px;
+    font: 700 16px/16px "宋体";
+    color: #999999;
+}
+.car .xinxi {
+    position: absolute;
+    top: -10px;
+    right: 22px;
+    width: 18px;
+    height: 18px;
+    background-color: #C81623;
+    color: white;
+    border-radius: 8px 8px 8px 0;
+}
+.w .hotwords {
+    width: 458px;
+    height: 18px;
+    float: left;
+    margin-top: 2px;
+    line-height: 18px;
+    font-size: 12px;
+}
+.hotwords a{
+    padding-right: 5px;
+}
+.hotwords .redword {
+    color: #C81623;
+}
+.clr {
+        display: block;
+        overflow: hidden;
+        clear: both;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+}
+
+
+/*nav区域*/
+#nav {
+    border-bottom: 2px solid #B1191A;
+    height: 44px;
+}
+#nav .daogou {
+    height: 44px;
+}
+/*因为最左边的商品分类是俩块竖起来的 但是根据语义要连起来写dt和dd
+所有就要用一个盒子把dt和dd装在一起；然后大盒子左浮动。接下来搜索框下面的分类
+（daogou）就可以挨着spfl这个盒子了  */
+#nav .spfl {
+    width: 210px;
+    height: 44px;
+    float: left;
+    position: relative;
+}
+#nav .dd {
+    width: 190px;
+    height: 44px;
+    float: left;
+    background: #B1191A;
+    line-height: 44px;
+    padding: 0 10px;
+}
+#nav .dd a{
+    color: white;
+    font-family: "microsoft yahei";
+    font-size: 15px;
+}
+#nav .dt {
+    width: 210px;
+    height: 466px;
+    background-color: #C81623;
+    display: block;
+    margin-top: 2px;
+    float: left;
+    font-size: 14px;
+}
+.dt .item {
+    height: 31px;
+    padding-left: 10px;
+    font-family: "microsoft yahei";
+    line-height: 31px;
+    border-left: 1px solid #C81623;
+}
+.item a{
+    color: white;
+}
+/*这里翻转颜色 需要在盒子点击hover的时候具体到a标签才能使a同时变色
+a标签不能继承颜色 因为它自己有一个伪类的权重*/
+.dt .item:hover {
+    background-color: white;
+}
+.dt .item:hover a {
+    color: #C81623;
+}
+
+/*这种隐藏的tab用css做*/
+.item:hover a .dianqi1 {
+    display: block;
+}
+/*这里是隐藏的tab栏*/
+.dianqi1 {
+    width: 999px;
+    height: 465px;
+    position: absolute;
+    top: 46px;
+    left: 210px;
+    background-color: deepskyblue;
+    display: none;
+    border-bottom: 1px solid #C81623;
+    border-right: 1px solid #C81623;
+    z-index: 999;
+}
+/*.special {
+    background-color: deepskyblue;
+}*/
+
+ /*商品分类完成  开始搜索下方的分类导购条*/
+#nav .daogou ul {
+    float: left;
+    width: 730px;
+    height: 44px;
+}
+.daogou li {
+    float: left;
+    width: 60px;
+    padding: 0 10px;
+    text-align: center;
+    font: 400 15px/44px "microsoft yahei";
+}
+.daogou a {
+    display: block;
+    width: 60px;
+    height: 44px;
+}
+/*focus区域*/
+.banner {
+    width: 1274px;
+    position: relative;
+}
+/*?????????????????????????????????????????????????????????????????????????*/
+.banner a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 604px;
+    background:url("../images/banner.jpg") no-repeat top center;
+    z-index: -1;
+}
+#focus {
+    height: 466px;
+}
+#focus .pic {
+    float: left;
+    margin: 12px 0 0 220px;
+    width: 730px;
+    height: 454px;
+    position: relative;
+}
+/*focus焦点图片*/
+#pics {
+    width: 730px;
+    height: 454px;
+    position: relative;
+    overflow: hidden;
+}
+#pics ul {
+    width: 1000%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+}
+#pics li {
+    float: left;
+}
+
+
+.pic .jiantou {
+    display: none;
+}
+.pic .jiantou1 {
+    width: 28px;
+    height: 62px;
+    background-color: #C2BFB6;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -31px;
+    font: 700 30px/62px "宋体";
+    text-align: center;
+    color: white;
+    opacity: 0.5;
+}
+.pic .jiantou2 {
+    width: 28px;
+    height: 62px;
+    background-color: #C2BFB6;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -31px;
+    text-align: center;
+    font: 700 30px/62px "宋体";
+    color: white;
+    opacity: 0.5;
+}
+.pic .jiantou1:hover {
+    background-color: red;
+}
+.pic .jiantou2:hover {
+    background-color: red;
+}
+.pic .yuandian {
+    position: absolute;
+    width: 128px;
+    height: 18px;
+    bottom: 8px;
+    left: 50%;
+    margin-left: -64px;
+}
+.yuandian li {
+    float: left;
+    width: 18px;
+    height: 18px;
+    background-color: #3E3E3E;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    margin-right: 2px;
+    cursor: pointer;
+}
+.yuandian .current {
+    background-color: #C81623;
+}
+
+/*focus右侧新闻区*/
+#focus .news1{
+    width: 248px;
+    height: 451px;
+    float: right;
+    margin-top: 12px;
+}
+#focus .newsdj {
+    width: 246px;
+    border: 1px solid #E8E8E7;
+}
+#focus .news3 {
+    width: 218px;
+    height: 35px;
+    padding: 0 15px;
+}
+.news3 h3 {
+    float: left;
+    font:700 16px "microsoft yahei";
+    line-height: 40px;
+}
+.news3 span {
+    float: right;
+    font: 12px/28px "simsun";
+}
+.newsdj .news4 {
+    padding: 5px 0 0 15px;
+}
+.news4 li {
+    width: 210px;
+    height: 25px;
+    font-size: 12px;
+}
+.news1 .life {
+    width: 248px;
+    height: 208px;
+    border-left: 1px solid #E8E8E7;
+}
+.life li {
+    width: 61px;
+    height: 68px;
+    border-right: 1px solid #E8E8E7;
+    border-bottom: 1px solid #E8E8E7;
+    float: left;
+}
+.life a{
+    display: block;
+    width: 61px;
+    height: 23px;
+    padding-top: 45px;
+    position: relative;
+    line-height: 23px;
+    text-align: center;
+}
+.life a i {
+    position: absolute;
+    top: 13px;
+    left: 21px;
+    width: 24px;
+    height: 24px;
+    background: url("../images/life.png") no-repeat 0 0;
+}
+/*尾部*/
+
+#footer .ficon {
+    width: 100%;
+    height: 54px;
+    padding: 20px 0;
+    background-color: #F5F5F5;
+    margin-top: 50px;
+    position: relative;
+}
+.ficon .icon {
+    width: 220px;
+    height: 54px;
+    position: absolute;
+    left: 50%;
+}
+.ficon .bz1 {
+    margin-left: -606px;
+}
+.ficon .bz2 {
+    margin-left: -303px;
+}
+.ficon .bz3 {
+    margin-left: 1px;
+}
+.ficon .bz4 {
+    margin-left: 303px;
+}
+#footer .service {
+    border-bottom: 1px solid #E5E5E5;
+}
+.service dl {
+    float: left;
+    width: 199px;
+    height: 202px;
+}
+.service dt {
+    font: 700 16px/32px "microsoft yahei ";
+    padding-top: 10px;
+}
+.service .map {
+    width: 203px;
+    height: 159px;
+    float: right;
+    background: url("../images/china.png") no-repeat 0 -131px;
+    padding-top: 10px;
+}
+.map dt {
+    height: 22px;
+    line-height: 22px;
+}
+.map dd {
+    margin: 10px;
+    line-height: 20px;
+}
+.map a {
+    display: block;
+    margin-top: 20px;
+    text-align: right;
+}
+
+#footer .message {
+    height: 110px;
+    padding-top: 17px;
+    text-align: center;
+}
+.message .links {
+    height: 24px;
+    font: 12px/24px "simsun";
+}
+#footer .beian {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
